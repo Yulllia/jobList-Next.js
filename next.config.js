@@ -2,10 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    loader: 'custom',
+    loaderFile: './loader.tsx',
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"]
+      use: ["@svgr/webpack"],
     });
 
     return config;
@@ -13,12 +17,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "/**",
       },
     ],
   },
 };
-module.exports = nextConfig
+module.exports = nextConfig;
+

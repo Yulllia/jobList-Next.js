@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Image from "next/image";
+import myLoader from "../../loader";
 
 interface ImageProps {
   item: string[] | string | undefined;
@@ -17,6 +18,7 @@ function ImageItem(props: ImageProps) {
           return (
             <React.Fragment key={index}>
               <Image
+                loader={myLoader}
                 src={`${item ?? ""}?random=${index}`}
                 className={`bg-cover bg-center rounded-lg w-[${width}px] h-[${height}px] mr-[12px]`}
                 alt="department"
@@ -29,6 +31,7 @@ function ImageItem(props: ImageProps) {
       ) : (
         <React.Fragment>
           <Image
+            loader={myLoader}
             src={`${item}`}
             className={`rounded-lg object-cover w-[${width}] h-[${height}]`}
             alt="department"

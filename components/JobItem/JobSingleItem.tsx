@@ -7,6 +7,7 @@ import moment from "moment";
 import Link from "next/link";
 import SaveJob from "../saveJobIcon/saveJob";
 import styles from "./JobSingleItem.module.css";
+import myLoader from "../../loader";
 
 interface locationType {
   city: string;
@@ -76,6 +77,7 @@ function JobSingleItem(props: {
             >
               <div className="flex">
                 <Image
+                  loader={myLoader}
                   src={`${item.pictures[0]}?random=${item.id}`}
                   className={styles.image}
                   alt="department"
@@ -140,6 +142,7 @@ function JobSingleItem(props: {
                   }}
                 >
                   <Image
+                    loader={myLoader}
                     src={`${item.pictures[0]}?random=${item.id}`}
                     className={styles.image}
                     alt="department"
