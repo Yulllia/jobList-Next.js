@@ -1,0 +1,25 @@
+.container {
+  @apply max-[1100px]:px-[15px] max-[650px]:py-[24px] min-[651px]:mt-[56px] min-[651px]:mb-[162px];
+}
+
+.headerContainer {
+  @apply max-w-[721px] items-center;
+}
+.divClassName {
+  @apply flex tracking-[-0.5625px] text-[18px] text-[#3A4562] leading-[24px] font-normal;
+}
+.header {
+  @apply flex justify-between items-center mb-[9px];
+}
+.buttonBlock {
+  @apply mt-[89px] max-w-[960px] items-center mx-auto;
+}
+.mapContainer {
+  @apply w-[402px] mt-[20px] h-[436px] bg-[#2A3047] relative rounded-lg -z-10;
+}
+.minDivClassName {
+  @apply mt-[24px] flex tracking-[-0.5px] text-[16px] text-[#3A4562] leading-[23px] font-normal;
+}
+.minMapContainer {
+  @apply bg-[#2A3047] mt-[20px] mx-auto relative rounded-lg -z-10;
+}
