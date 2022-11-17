@@ -21,7 +21,7 @@ function JobItem() {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=${process.env.NEXT_PUBLIC_ACCESS_TOKEN}`
+      `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token="`
     )
       .then((res) => res.json())
       .then((data) => {
