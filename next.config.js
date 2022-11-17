@@ -3,8 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    loader: 'custom',
-    loaderFile: './loader.tsx',
+    unoptimized: true,
   },
   experimental: {
     forceSwcTransforms: false,
