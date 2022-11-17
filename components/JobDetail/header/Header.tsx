@@ -4,10 +4,11 @@ import Button from "../../JobItemStyle/Button";
 import ShareLink from "../../JobItemStyle/ShareLink";
 import Title from "../../JobItemStyle/Title";
 import { JobItemType } from "../../JobList/interface";
-import SaveJob from "../../saveJobIcon/saveJob";
 import moment from "moment";
 import Text from "../../../components/JobItemStyle/Text";
 import styles from "./Header.module.css";
+import SaveJob from "../../saveJobIcon/saveJob";
+
 
 function Header(props: {
   jobItem: JobItemType;

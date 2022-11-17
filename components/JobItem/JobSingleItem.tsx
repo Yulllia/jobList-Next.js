@@ -5,9 +5,9 @@ import { FiMapPin } from "react-icons/fi";
 import ReactStars from "react-star-rating-component";
 import moment from "moment";
 import Link from "next/link";
-import SaveJob from "../saveJobIcon/saveJob";
 import styles from "./JobSingleItem.module.css";
 import myLoader from "../../loader";
+import SaveJob from "../saveJobIcon/saveJob";
 
 interface locationType {
   city: string;

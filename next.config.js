@@ -6,6 +6,9 @@ const nextConfig = {
     loader: 'custom',
     loaderFile: './loader.tsx',
   },
+  experimental: {
+    forceSwcTransforms: false,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

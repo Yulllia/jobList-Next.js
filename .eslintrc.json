@@ -1,8 +1,7 @@
 {
   "extends": "next/core-web-vitals",
-  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": true
+    "allowImportExportEverywhere": false
 }
 }
