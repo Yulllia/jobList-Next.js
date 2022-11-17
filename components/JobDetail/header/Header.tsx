@@ -7,7 +7,7 @@ import { JobItemType } from "../../JobList/interface";
 import moment from "moment";
 import Text from "../../../components/JobItemStyle/Text";
 import styles from "./Header.module.css";
-import SaveJob from "../../saveJobIcon/saveJob";
+import SaveJob from "../../JobItemStyle/SaveJob";
 
 
 function Header(props: {

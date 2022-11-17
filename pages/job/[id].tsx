@@ -31,7 +31,7 @@ function JobItem() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   if (isLoading) return <p>Loading...</p>;
   if (!jobItem) return <p>No Job Item found</p>;

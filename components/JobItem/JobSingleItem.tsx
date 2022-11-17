@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { JobItemType } from "../JobList/interface";
 import Image from "next/image";
 import { FiMapPin } from "react-icons/fi";
-import ReactStars from "react-star-rating-component";
+import ReactStars from 'react-stars'
 import moment from "moment";
 import Link from "next/link";
 import styles from "./JobSingleItem.module.css";
 import myLoader from "../../loader";
-import SaveJob from "../saveJobIcon/saveJob";
+import SaveJob from "../JobItemStyle/SaveJob";
 
 interface locationType {
   city: string;
@@ -38,12 +38,12 @@ function JobSingleItem(props: {
         })
       )
       .catch((error) => console.log("error", error));
-  }, []);
+  }, [item.location.lat, item.location.long]);
 
   useEffect(() => {
     const starIcon = localStorage.getItem("star" + JSON.stringify(item.id));
     if (starIcon) setCount(JSON.parse(starIcon));
-  }, []);
+  }, [item.id]);
 
   const reactStarProps = {
     starCount: 5,
@@ -106,9 +106,8 @@ function JobSingleItem(props: {
               <SaveJob id={item.id} />
               <ReactStars
                 {...reactStarProps}
-                name={"star"}
                 value={count}
-                onStarClick={(count) => handleChangeStar(count)}
+                onChange={(count: number) => handleChangeStar(count)}
               />
               <h3 className={styles.datePosted}>
                 {" "}
@@ -125,9 +124,8 @@ function JobSingleItem(props: {
                 <div className={styles.starsContainer}>
                   <ReactStars
                     {...reactStarProps}
-                    name={"star"}
                     value={count}
-                    onStarClick={(count) => handleChangeStar(count)}
+                    onChange={(count) => handleChangeStar(count)}
                   />
                   <h3 className={styles.datePosted}>
                     {" "}

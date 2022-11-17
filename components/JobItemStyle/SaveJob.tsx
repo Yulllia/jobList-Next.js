@@ -10,7 +10,7 @@ function SaveJob(props: { id: string }) {
   useEffect(() => {
     const bookmark = localStorage.getItem("saveIcon" + JSON.stringify(id));
     if (bookmark) setSaveJob(JSON.parse(bookmark));
-  }, []);
+  }, [id]);
 
 
   const handleSaveClick = () => {
