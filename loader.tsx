@@ -4,5 +4,5 @@ type LoaderInerface = {
   quality?: number | undefined;
 };
 export default function myLoader({ src, width, quality }: LoaderInerface) {
-  return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
+  return `${src}?w=${width}&q=${quality || 75}`;
 }

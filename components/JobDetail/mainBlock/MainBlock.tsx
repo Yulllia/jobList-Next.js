@@ -8,7 +8,7 @@ import { JobItemType } from "../../JobList/interface";
 
 function MainBlock(props: { jobItem: JobItemType; className: string }) {
   const { jobItem, className } = props;
-
+  
   return (
     <div className={className}>
       <div className="mt-[86px]">

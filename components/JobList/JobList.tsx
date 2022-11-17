@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { JobItemType } from "./interface";
 import JobSingleItem from "../JobItem/JobSingleItem";
 import { useWindowDimensions } from "./mediaStyles";
+import Pagination from "./Pagination";
 
 function JobList() {
   const [jobList, setJobList] = useState<JobItemType[]>();
   const [isLoading, setLoading] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [jobsPerPage] = useState(5);
   const { windowSize } = useWindowDimensions();
+
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -22,6 +26,11 @@ function JobList() {
       });
   }, []);
 
+  const indexOfLastPost = currentPage * jobsPerPage;
+  const indexOfFirstPost = indexOfLastPost - jobsPerPage;
+  const currentPosts = useMemo(() => jobList?.slice(indexOfFirstPost, indexOfLastPost), [indexOfFirstPost, indexOfLastPost, jobList]);
+  const paginate = (pageNumber: React.SetStateAction<number>) => setCurrentPage(pageNumber);
+
   if (isLoading) return <p>Loading...</p>;
   if (!jobList) return <p>No profile data</p>;
 
@@ -29,8 +38,8 @@ function JobList() {
     <div className="bg-[#F5F5F5]">
       <ul className="p-[15px]">
         {!isLoading &&
-          jobList?.length &&
-          jobList.map((item: JobItemType, index) => {
+          currentPosts?.length &&
+          currentPosts.map((item: JobItemType, index) => {
             return (
               <JobSingleItem
                 item={item}
@@ -41,6 +50,7 @@ function JobList() {
             );
           })}
       </ul>
+      <Pagination filterPerPage={jobsPerPage} currentPage={currentPage} total={jobList.length} paginate={paginate}/>
     </div>
   );
 }
