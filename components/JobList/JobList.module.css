@@ -1,0 +1,27 @@
+.containerWrapper {
+  @apply max-[649px]:mt-[26px] max-[649px]:pb-[17px] px-[18px] mx-auto justify-between min-[650px]:mt-[49px] min-[650px]:pb-[64px] sm:px-6;
+}
+.wrapper {
+  @apply items-center flex justify-center;
+}
+.navigation {
+  @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
+}
+.linkArrow {
+  @apply relative inline-flex items-center rounded-l-md  bg-white px-[30px] py-2 font-medium text-gray-500;
+}
+.arrow {
+  @apply cursor-pointer max-[650px]:hidden h-5 w-5;
+}
+.borderLeft {
+  @apply w-[1.3px] h-[31.2px] ml-[52px] border bg-[#DEE3EF];
+}
+.borderRight {
+  @apply w-[1.3px] h-[31.2px] mr-[52px]  border bg-[#DEE3EF];
+}
+.numberPaginate {
+  @apply active:text-[#5876C5] cursor-pointer h-[100%] max-[650px]:w-[24px] min-[650px]:w-[31px] relative inline-flex items-center bg-white px-2 py-2 text-[20.8px] leading-[25px] text-[#70778B] hover:bg-gray-50 focus:z-20;
+}
+.disable {
+  @apply cursor-not-allowed;
+}
