@@ -3,9 +3,14 @@ import React from "react";
 
 function ButtonReturn() {
   const router = useRouter();
+
+  function routeBack(e: { preventDefault: () => void; }){
+    e.preventDefault();
+    router.push('/')
+  }
   return (
     <button
-      onClick={() => router.back()}
+      onClick={routeBack}
       className="pt-[18px] pb-[16px] pr-[26px] pl-[23px] items-center uppercase cursor-pointer rounded-[8px] bg-[rgba(57,70,100,0.14)]"
     >
       <p className="items-center">

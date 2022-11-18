@@ -18,3 +18,5 @@ interface MapLocation {
     lat: number;
     long: number;
 }
+
+export const siteLink = "https://job-list-next-js-79c4.vercel.app";
